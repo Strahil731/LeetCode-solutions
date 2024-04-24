@@ -1,9 +1,12 @@
-function singleNumber(nums){
-    let single = nums[0];
+function singleNumber(nums) {
+    if (nums.length === 1) return nums[0];
 
-    for(let i = 0; i < nums.length; i++){
-        console.log(nums[i]);
+    for (let i = 0; i < nums.length; i++) {
+        if (nums.indexOf(nums[i]) === nums.lastIndexOf(nums[i])) {
+            return nums[i]
+        }
     }
+    return null;
 }
 
-singleNumber([4, 2, 1, 2, 1])
+singleNumber([2, 2, 1])
